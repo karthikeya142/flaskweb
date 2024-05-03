@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: karthik142/watermark:water
         ports:
         - containerPort: 80   # Use port 3000
 
