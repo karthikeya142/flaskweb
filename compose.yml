@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
       - name: con1
-        image: karthik142/watermark:water
+        image: nginx
         ports:
-        - containerPort: 8080   # Use port 3000
+        - containerPort: 80   # Use port 3000
 
 
 ---
@@ -31,4 +31,4 @@ spec:
     app: nginx
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 80
