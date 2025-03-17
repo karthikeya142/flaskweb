@@ -1,21 +1,7 @@
-
-options:
-  # Specify your custom Cloud Storage bucket for logs
-  logs_bucket: gs://run-sources-gcp-dev-453609-us-central1/
-
-
-
-
 steps:
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  args:
-  - gcloud
-  - functions
-  - deploy
-  - function_cicd
-  - --region=us-central1
-  - --source=.
-  - --trigger-http
-  - --runtime=python37
-  - --entry-point=home
-
+  entrypoint: 'bash'
+  args: ['-c', 'gcloud config set app/cloud_build_timeout 1600 && gcloud app deploy']
+options:
+  logging: CLOUD_LOGGGING_ONLY
+timeout: '1600s'
